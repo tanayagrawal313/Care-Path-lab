@@ -747,6 +747,7 @@
 
 
 <!-- BOOKING -->
+<!-- BOOKING -->
 
 <section class="booking" id="booking">
 
@@ -755,93 +756,79 @@
     <h2>Book Your Test</h2>
 
     <p>
-      Fill in your details and we'll contact you to confirm
-      your test and collection details.
+      Fill in your details and send your booking directly to
+      Care Path Lab on WhatsApp.
     </p>
 
-
-    <form
-      action="https://formsubmit.co/8720022922"
-      method="POST"
-    >
+    <form id="bookingForm">
 
       <input
         type="text"
-        name="name"
+        id="name"
         placeholder="Your Name"
         required
       >
 
       <input
         type="tel"
-        name="phone"
+        id="phone"
         placeholder="Mobile Number"
         required
       >
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Email Address"
-      >
-
-      <select name="test" required>
+      <select id="test" required>
 
         <option value="">
           Select Test / Package
         </option>
 
-        <option>
+        <option value="Full Body Health Checkup">
           Full Body Health Checkup
         </option>
 
-        <option>
+        <option value="Executive Full Body Checkup">
+          Executive Full Body Checkup
+        </option>
+
+        <option value="Thyroid Profile">
           Thyroid Profile
         </option>
 
-        <option>
+        <option value="Diabetes Tests">
           Diabetes Tests
         </option>
 
-        <option>
+        <option value="Lipid Profile">
           Lipid Profile
         </option>
 
-        <option>
+        <option value="Liver Function Test">
           Liver Function Test
         </option>
 
-        <option>
+        <option value="Kidney Function Test">
           Kidney Function Test
         </option>
 
-        <option>
+        <option value="Other Test">
           Other Test
         </option>
 
       </select>
 
-
       <textarea
-        name="message"
-        placeholder="Address / Additional Information"
+        id="address"
+        placeholder="Your Address / Home Collection Address"
+        required
       ></textarea>
 
-
-      <input
-        type="hidden"
-        name="_subject"
-        value="New Care Path Lab Test Booking"
-      >
-
-      <input
-        type="hidden"
-        name="_captcha"
-        value="false"
-      >
+      <textarea
+        id="message"
+        placeholder="Any additional information (optional)"
+      ></textarea>
 
       <button type="submit">
-        Submit Booking
+        💬 Book Test on WhatsApp
       </button>
 
     </form>
@@ -850,6 +837,48 @@
 
 </section>
 
+
+<script>
+
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const test = document.getElementById("test").value;
+  const address = document.getElementById("address").value;
+  const message = document.getElementById("message").value;
+
+  const whatsappMessage =
+`🧪 *NEW TEST BOOKING*
+
+*Care Path Lab – Thyrocare*
+
+👤 Name: ${name}
+
+📱 Mobile: ${phone}
+
+🧪 Test / Package:
+${test}
+
+🏠 Address:
+${address}
+
+📝 Additional Information:
+${message || "None"}
+
+Please confirm my booking and home sample collection details.`;
+
+  const whatsappURL =
+    "https://wa.me/918720029222?text=" +
+    encodeURIComponent(whatsappMessage);
+
+  window.open(whatsappURL, "_blank");
+
+});
+
+</script>
 
 <!-- CONTACT -->
 
