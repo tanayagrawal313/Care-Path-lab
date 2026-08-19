@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Care Path Lab | Thyrocare Diagnostic Centre</title>
+
+  <meta name="description"
+        content="Care Path Lab by Thyrocare – Diagnostic blood tests, health packages and home sample collection in Jabalpur.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f7fbff;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+
+    header {
+      background: white;
+      padding: 15px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #087f5b;
+    }
+
+    .logo span {
+      color: #e63946;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #172033;
+      margin-left: 25px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #087f5b;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(135deg, #e9fff7, #eef7ff);
+      padding: 75px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #12372c;
+    }
+
+    .hero h1 span {
+      color: #087f5b;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #4b5563;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .primary {
+      background: #087f5b;
+      color: white;
+    }
+
+    .primary:hover {
+      background: #056b4c;
+    }
+
+    .secondary {
+      background: white;
+      color: #087f5b;
+      border: 2px solid #087f5b;
+    }
+
+    .hero-card {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .hero-card .icon {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    .hero-card h2 {
+      color: #087f5b;
+      margin-bottom: 8px;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 70px 6%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #12372c;
+    }
+
+    .section-title p {
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      background: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .service .emoji {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+      color: #087f5b;
+    }
+
+    /* PACKAGES */
+
+    .packages {
+      background: #f0faf7;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .package {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+
+    .package h3 {
+      color: #087f5b;
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .package .price {
+      font-size: 27px;
+      font-weight: bold;
+      color: #e63946;
+      margin: 15px 0;
+    }
+
+    .package ul {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .package li {
+      padding: 6px 0;
+    }
+
+    .package li::before {
+      content: "✓ ";
+      color: #087f5b;
+      font-weight: bold;
+    }
+
+    /* WHY US */
+
+    .why {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .why-item {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .why-item h3 {
+      color: #087f5b;
+      margin-bottom: 5px;
+    }
+
+    /* BOOKING */
+
+    .booking {
+      background: linear-gradient(135deg, #087f5b, #075985);
+      color: white;
+    }
+
+    .booking-container {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .booking h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .booking p {
+      margin-bottom: 25px;
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: left;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 7px;
+      background: #087f5b;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #056b4c;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .contact-card .emoji {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card h3 {
+      color: #087f5b;
+    }
+
+    .contact-card a {
+      color: #172033;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #102a24;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer h2 {
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      color: #cbd5d1;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+      z-index: 999;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 850px) {
+
+      header {
+        padding: 14px 5%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 5%;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero-card {
+        width: 100%;
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .package-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+
+    @media(max-width: 500px) {
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 31px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .buttons .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    CARE PATH <span>LAB</span>
+  </div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#packages">Packages</a>
+    <a href="#booking">Book Test</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-text">
+
+    <h1>
+      Complete Diagnostic Care
+      <span>Under One Roof</span>
+    </h1>
+
+    <p>
+      Care Path Lab by Thyrocare provides reliable diagnostic
+      testing, preventive health packages and convenient
+      home sample collection.
+    </p>
+
+    <div class="buttons">
+
+      <a href="#booking" class="btn primary">
+        Book a Test
+      </a>
+
+      <a href="tel:8720022922" class="btn secondary">
+        📞 Call Now
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-card">
+
+    <div class="icon">🧪</div>
+
+    <h2>Thyrocare Diagnostics</h2>
+
+    <p>
+      Trusted laboratory testing with
+      convenient sample collection.
+    </p>
+
+    <br>
+
+    <strong>📍 Jabalpur, Madhya Pradesh</strong>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+  <div class="section-title">
+
+    <h2>Our Services</h2>
+
+    <p>
+      Diagnostic services designed for your health needs
+    </p>
+
+  </div>
+
+
+  <div class="services">
+
+    <div class="service">
+      <div class="emoji">🩸</div>
+      <h3>Blood Tests</h3>
+      <p>
+        Comprehensive blood investigations for routine
+        and preventive health monitoring.
+      </p>
+    </div>
+
+
+    <div class="service">
+      <div class="emoji">🏠</div>
+      <h3>Home Collection</h3>
+      <p>
+        Get your samples collected conveniently
+        from your home.
+      </p>
+    </div>
+
+
+    <div class="service">
+      <div class="emoji">❤️</div>
+      <h3>Health Packages</h3>
+      <p>
+        Affordable preventive health packages
+        covering multiple parameters.
+      </p>
+    </div>
+
+
+    <div class="service">
+      <div class="emoji">📄</div>
+      <h3>Digital Reports</h3>
+      <p>
+        Receive your diagnostic reports digitally
+        for easy access.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PACKAGES -->
+
+<section class="packages" id="packages">
+
+  <div class="section-title">
+
+    <h2>Popular Health Packages</h2>
+
+    <p>
+      Choose a package according to your health requirements
+    </p>
+
+  </div>
+
+
+  <div class="package-grid">
+
+
+    <div class="package">
+
+      <h3>Basic Health Checkup</h3>
+
+      <p>
+        Essential tests for routine health monitoring.
+      </p>
+
+      <div class="price">
+        Enquire Now
+      </div>
+
+      <ul>
+        <li>Complete Blood Count</li>
+        <li>Liver Function Tests</li>
+        <li>Kidney Function Tests</li>
+        <li>Blood Sugar</li>
+        <li>Lipid Profile</li>
+      </ul>
+
+      <a href="#booking" class="btn primary">
+        Book Package
+      </a>
+
+    </div>
+
+
+    <div class="package">
+
+      <h3>Full Body Checkup</h3>
+
+      <p>
+        Comprehensive preventive health screening.
+      </p>
+
+      <div class="price">
+        Enquire Now
+      </div>
+
+      <ul>
+        <li>Blood Investigations</li>
+        <li>Diabetes Screening</li>
+        <li>Liver Profile</li>
+        <li>Kidney Profile</li>
+        <li>Thyroid Profile</li>
+      </ul>
+
+      <a href="#booking" class="btn primary">
+        Book Package
+      </a>
+
+    </div>
+
+
+    <div class="package">
+
+      <h3>Thyroid Profile</h3>
+
+      <p>
+        Testing for thyroid hormone levels.
+      </p>
+
+      <div class="price">
+        Enquire Now
+      </div>
+
+      <ul>
+        <li>TSH</li>
+        <li>T3</li>
+        <li>T4</li>
+        <li>Accurate Laboratory Testing</li>
+        <li>Digital Report</li>
+      </ul>
+
+      <a href="#booking" class="btn primary">
+        Book Test
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WHY CHOOSE US -->
+
+<section>
+
+  <div class="section-title">
+
+    <h2>Why Choose Care Path Lab?</h2>
+
+    <p>
+      Your health deserves convenient and reliable diagnostics.
+    </p>
+
+  </div>
+
+
+  <div class="why">
+
+    <div class="why-item">
+      <h3>✓ Thyrocare Network</h3>
+      <p>
+        Diagnostic services powered by the Thyrocare ecosystem.
+      </p>
+    </div>
+
+    <div class="why-item">
+      <h3>✓ Convenient Home Collection</h3>
+      <p>
+        Avoid unnecessary travel with sample collection
+        at your doorstep.
+      </p>
+    </div>
+
+    <div class="why-item">
+      <h3>✓ Wide Range of Tests</h3>
+      <p>
+        Routine tests, preventive packages and specialized
+        investigations.
+      </p>
+    </div>
+
+    <div class="why-item">
+      <h3>✓ Digital Reports</h3>
+      <p>
+        Access your reports conveniently after testing.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BOOKING -->
+
+<section class="booking" id="booking">
+
+  <div class="booking-container">
+
+    <h2>Book Your Test</h2>
+
+    <p>
+      Fill in your details and we'll contact you to confirm
+      your test and collection details.
+    </p>
+
+
+    <form
+      action="https://formsubmit.co/8720022922"
+      method="POST"
+    >
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+      >
+
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Mobile Number"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+      >
+
+      <select name="test" required>
+
+        <option value="">
+          Select Test / Package
+        </option>
+
+        <option>
+          Full Body Health Checkup
+        </option>
+
+        <option>
+          Thyroid Profile
+        </option>
+
+        <option>
+          Diabetes Tests
+        </option>
+
+        <option>
+          Lipid Profile
+        </option>
+
+        <option>
+          Liver Function Test
+        </option>
+
+        <option>
+          Kidney Function Test
+        </option>
+
+        <option>
+          Other Test
+        </option>
+
+      </select>
+
+
+      <textarea
+        name="message"
+        placeholder="Address / Additional Information"
+      ></textarea>
+
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Care Path Lab Test Booking"
+      >
+
+      <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+      >
+
+      <button type="submit">
+        Submit Booking
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="section-title">
+
+    <h2>Contact Care Path Lab</h2>
+
+    <p>
+      We're here to help you with your diagnostic needs.
+    </p>
+
+  </div>
+
+
+  <div class="contact">
+
+    <div class="contact-card">
+
+      <div class="emoji">📞</div>
+
+      <h3>Call Us</h3>
+
+      <p>
+        <a href="tel:8720022922">
+          8720022922
+        </a>
+      </p>
+
+    </div>
+
+
+    <div class="contact-card">
+
+      <div class="emoji">📍</div>
+
+      <h3>Visit Us</h3>
+
+      <p>
+        Baldeobagh Square,<br>
+        Beside Balaji Electricals,<br>
+        Jabalpur, Madhya Pradesh
+      </p>
+
+    </div>
+
+
+    <div class="contact-card">
+
+      <div class="emoji">💬</div>
+
+      <h3>WhatsApp</h3>
+
+      <p>
+        <a href="https://wa.me/918720029222">
+          Chat With Us
+        </a>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h2>CARE PATH LAB</h2>
+
+  <p>
+    By Thyrocare Diagnostics
+  </p>
+
+  <p>
+    Full Body • Preventive Health • Diagnostic Testing
+  </p>
+
+  <br>
+
+  <p>
+    © 2026 Care Path Lab. All Rights Reserved.
+  </p>
+
+</footer>
+
+
+<!-- WHATSAPP BUTTON -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/918720029222?text=Hello%20Care%20Path%20Lab,%20I%20want%20to%20book%20a%20test."
+  target="_blank"
+>
+  💬
+</a>
+
+
+</body>
+</html>
